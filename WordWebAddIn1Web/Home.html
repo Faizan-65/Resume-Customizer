@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Word Add-In with Commands Sample</title>
+
+    <script src="Scripts/jquery-3.6.0.js" type="text/javascript"></script>
+    <script src="Scripts/MessageBanner.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- To enable offline debugging using a local reference to Office.js, use:  -->
+    <!-- <script src="Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>  -->
+    <!-- <script src="Scripts/Office/1/office.js" type="text/javascript"></script>  -->
+
+    <script src="Home.js" type="text/javascript"></script>
+    <link href="Home.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/Button.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/MessageBanner.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- For Office UI Fabric Core, go to https://aka.ms/office-ui-fabric to learn more. -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.0/css/fabric.min.css">
+
+    <!-- To enable the offline use of Office UI Fabric Core, use: -->
+    <!-- link rel="stylesheet" href="Content/fabric.min.css" -->
+</head>
+
+<!-- Office UI Fabric JS and it's components are no longer actively supported. Please see https://aka.ms/PnP-OfficeFabricReact for recommended Patterns and Practices -->
+<!-- <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.components.min.css"> -->
+<body class="ms-Fabric" dir="ltr">
+    <div id="content-main" class="d-flex flex-wrap mx-auto gap-2" style="width: 270px;">
+        <div class="formbuilder-textarea form-group field-textarea-1696514336770" style="width: 270px;">
+            <label for="textarea-1696514336770" class="formbuilder-textarea-label h7 text-primary fw-bold">Enter your Job Description</label>
+            <textarea type="textarea" class="form-control" style="height: 200px" name="textarea-1696514336770" access="false" id="JDtextarea">Company Name ^ Job Title ^ google.com ^ We are seeking a talented and motivated developer to join our team. As a    
+                member of our team, you will have the opportunity to work on a wide range of projects using cutting-edge technologies.
+                My Foo Foo. Foo is Foo bur Bar is Bar and Baz. 
+                Requirements:
+
+                - Proficiency in Ruby and NodeJS.
+                - Experience with React and Vue.
+                - Familiarity with MongoDB and SQL databases.
+                - Knowledge of Docker and Kubernetes.
+                - Version control using Git and Gitlab.
+                - Strong problem-solving skills.
+                - Experience with data analysis and visualization.
+                - Familiarity with cloud services such as AWS and Google Cloud Platform.
+                - Understanding of machine learning concepts.
+                - Knowledge of blockchain technologies.
+
+                Nice to have:
+
+                - Experience with Python and Flask.
+                - Frontend skills with Angular and Bootstrap.
+                - DevOps experience with Jenkins and Terraform.
+                - Testing experience with Jest and Selenium.
+                - Knowledge of big data tools like Hadoop and Spark.
+                - Familiarity with ML frameworks like TensorFlow and PyTorch.
+                - Previous work with Wordpress and Shopify.
+
+                If you are a passionate developer with a diverse skill set and a strong desire to learn and grow, we encourage you to apply. Join our team and be part of exciting projects that make a difference!
+            </textarea>
+
+        </div>
+
+        <div class="d-grid col-6 mx-auto" style="width: 270px;">
+            <button type="button" class="btn-primary btn" name="button-1696514564541" value="SegragateData" access="false" id="SegragateData">Segregate Data</button>
+        </div>
+
+        <div class="formbuilder-text form-group field-text-1696556137760" style="width: 130px;">
+            <label for="text-1696556137760" class="formbuilder-text-label h7 text-primary fw-bold">Job Title</label>
+            <input type="text" class="form-control" name="text-1696556137760" access="false" id="jobTitle">
+        </div>
+        <div class="formbuilder-text form-group field-text-1696556137760" style="width: 130px;">
+            <label for="text-1696556137760" class="formbuilder-text-label h7 text-primary fw-bold">Company</label>
+            <input type="text" class="form-control" name="text-1696556137760" access="false" id="company">
+        </div>
+        <div class="formbuilder-text form-group field-text-1696556137760" style="width: 270px;">
+            <label for="text-1696556137760" class="formbuilder-text-label h7 text-primary fw-bold">Job Link</label>
+            <input type="text" class="form-control" name="text-1696556137760" access="false" id="jobLink">
+        </div>
+        <div class="formbuilder-textarea form-group field-textarea-1696556832409" style="width: 270px;">
+            <label for="textarea-1696556832409" class="formbuilder-textarea-label h7 text-primary fw-bold">Job Description</label>
+            <textarea type="textarea" class="form-control" style="height: 200px" name="textarea-1696556832409" access="false" id="jobDescription"></textarea>
+        </div>
+        <div class="formbuilder-button form-group field-button-1696514564541 d-grid col-6">
+            <button type="button" class="btn-sm btn-primary btn" name="button-1696514564541" value="AnalyzeJD" access="false" id="AnalyzeJD" style="width: 270px;">AnalyzeJD</button>
+        </div>
+        <div class="formbuilder-button form-group field-button-1696514564541 d-grid col-6 mx-auto" style="width: 130px;">
+            <button type="button" class="btn-primary btn replaceKeywordsButton" name="button-1696514564542" value="ReplaceKeywords" access="false" >Replace</button>
+        </div>
+        <div class="formbuilder-button form-group field-button-1696514564541 d-grid col-6 mx-auto" style="width: 130px;">
+            <button type="button" class="btn-primary btn exportPdf" name="button-1696514564543" value="ExportPdf" access="false" >Export Pdf</button>
+        </div>
+        <div class="formbuilder-button form-group field-button-1696514564541" >
+            <button type="button" class="btn btn-link clearSelection" name="button-1696514564543" value="clearSelection" access="false">Clear Selection</button>
+        </div>
+        <div id="checkboxesParent" class="d-flex gap-2 flex-wrap mx-auto" style="width: 270px;">
+            <script>
+                makeCheckBoxes(progLanguages, "progLanguages_checkboxContainer", "Programming Languages");
+                makeCheckBoxes(frontEndStacks, "frontEndStacks_checkboxContainer", "FrontEnd Stacks");
+                makeCheckBoxes(primaryBackEndStacks, "primaryBackEndStacks_checkboxContainer", "Primary Backend Stacks");
+                makeCheckBoxes(secondaryBackEndStacks, "secondaryBackEndStacks_checkboxContainer", "Secondary Backend Stacks");
+                makeCheckBoxes(styleFrameworks, "styleFrameworks_checkboxContainer", "Style Framework");
+                makeCheckBoxes(sqlDatabases, "sqlDatabases_checkboxContainer", "SQL Databases  ");
+                makeCheckBoxes(noSDatabases, "noSDatabases_checkboxContainer", "NoSQL Databases ");
+                makeCheckBoxes(planningTools, "planningTools_checkboxContainer", "Planning Tools ");
+                makeCheckBoxes(developmentTools, "developmentTools_checkboxContainer", "Development Tools ");
+                makeCheckBoxes(versionControl, "versionControl_checkboxContainer", "Version Control Tools ");
+                makeCheckBoxes(buildTools, "buildTools_checkboxContainer", "Build Tools ");
+                makeCheckBoxes(testingTools, "testingTools_checkboxContainer", "Testing Tools");
+                makeCheckBoxes(deployementTools, "deployementTools_checkboxContainer", "Deployment Tools ");
+                makeCheckBoxes(operationsTools, "operationsTools_checkboxContainer", "Operations Tools ");
+                makeCheckBoxes(cloudServices, "cloudServices_checkboxContainer", "Cloud Tools ");
+                makeCheckBoxes(mlSkills, "mlSkills_checkboxContainer", "ML Skills ");
+                makeCheckBoxes(dataOnly, "dataOnly_checkboxContainer", "Data Skills ");
+                makeCheckBoxes(mlDataToolsFrameworks, "mlDataToolsFrameworks_checkboxContainer", "ML/Data Tools and Frameworks ");
+                makeCheckBoxes(bigData, "bigData_checkboxContainer", "BigData");
+                makeCheckBoxes(blockChain, "blockChain_checkboxContainer", "Blockchain Skills ");
+                makeCheckBoxes(others, "others_checkboxContainer", "Other Skills ");
+            </script>
+        </div>
+        <div class="formbuilder-button form-group field-button-1696514564541 d-grid col-6 mx-auto" style="width: 130px;">
+            <button type="button" class="btn-primary btn replaceKeywordsButton" name="button-1696514564542" value="ReplaceKeywords" access="false">Replace</button>
+        </div>
+        <div class="formbuilder-button form-group field-button-1696514564541 d-grid col-6 mx-auto" style="width: 130px;">
+            <button type="button" class="btn-primary btn exportPdf" name="button-1696514564543" value="ExportPdf" access="false">Export Pdf</button>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="ms-Grid ms-bgColor-themeSecondary">
+            <div class="ms-Grid-row">
+                <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12"> <div class="ms-font-xl ms-fontColor-white">Contoso</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Component used for displaying notifications -->
+    <div class="MessageBanner" id="notification-popup">
+        <div class="MessageBanner-content">
+            <div class="MessageBanner-text">
+                <div class="MessageBanner-clipper">
+                    <div class="ms-font-m-plus ms-fontWeight-semibold" id="notification-header"></div>
+                    <div class="ms-font-m ms-fontWeight-semilight" id="notification-body"></div>
+                </div>
+            </div>
+            <button class="MessageBanner-expand" style="display:none"><i class="ms-Icon ms-Icon--chevronsDown"></i> </button>
+            <div class="MessageBanner-action"></div>
+        </div>
+        <button class="MessageBanner-close"> <i class="ms-Icon ms-Icon--ChromeClose"></i> </button>
+    </div>
+</body>
+</html>

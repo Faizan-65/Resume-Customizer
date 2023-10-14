@@ -1,0 +1,220 @@
+<div class="formbuilder-textarea form-group field-textarea-1696514336770">
+    <label for="textarea-1696514336770" class="formbuilder-textarea-label">Enter your Job Description</label>
+    <textarea type="textarea" class="form-control" name="textarea-1696514336770" access="false" id="JDtextarea">
+             Company Name ^ Job Title ^ google.com ^ We are seeking a talented and motivated developer to join our team. As a    
+             member of our team, you will have the opportunity to work on a wide range of projects using cutting-edge technologies.
+              Requirements:
+
+              - Proficiency in Ruby and NodeJS.
+              - Experience with React and Vue.
+              - Familiarity with MongoDB and SQL databases.
+              - Knowledge of Docker and Kubernetes.
+              - Version control using Git and Gitlab.
+              - Strong problem-solving skills.
+              - Experience with data analysis and visualization.
+              - Familiarity with cloud services such as AWS and Google Cloud Platform.
+              - Understanding of machine learning concepts.
+              - Knowledge of blockchain technologies.
+
+              Nice to have:
+
+              - Experience with Python and Flask.
+              - Frontend skills with Angular and Bootstrap.
+              - DevOps experience with Jenkins and Terraform.
+              - Testing experience with Jest and Selenium.
+              - Knowledge of big data tools like Hadoop and Spark.
+              - Familiarity with ML frameworks like TensorFlow and PyTorch.
+              - Previous work with WordPress and Shopify.
+
+              If you are a passionate developer with a diverse skill set and a strong desire to learn and grow, we encourage you to apply. Join our team and be part of exciting projects that make a difference!
+          </textarea>
+</div>
+<div class="formbuilder-button form-group field-button-1696514564541">
+    <button type="button" class="btn-primary btn" name="button-1696514564541" value="SegragateData" access="false" id="SegragateData">Segregate Data</button>
+</div>
+
+<div class="formbuilder-text form-group field-text-1696556137760">
+    <label for="text-1696556137760" class="formbuilder-text-label">Job Title</label>
+    <input type="text" class="form-control" name="text-1696556137760" access="false" id="jobTitle">
+</div>
+<div class="formbuilder-text form-group field-text-1696556137760">
+    <label for="text-1696556137760" class="formbuilder-text-label">Company</label>
+    <input type="text" class="form-control" name="text-1696556137760" access="false" id="company">
+</div>
+<div class="formbuilder-text form-group field-text-1696556137760">
+    <label for="text-1696556137760" class="formbuilder-text-label">Job Link</label>
+    <input type="text" class="form-control" name="text-1696556137760" access="false" id="jobLink">
+</div>
+<div class="formbuilder-textarea form-group field-textarea-1696556832409">
+    <label for="textarea-1696556832409" class="formbuilder-textarea-label">Job Description</label>
+    <textarea type="textarea" class="form-control" name="textarea-1696556832409" access="false" id="jobDescription"></textarea>
+</div>
+<div class="formbuilder-button form-group field-button-1696514564541">
+    <button type="button" class="btn-primary btn" name="button-1696514564541" value="AnalyzeJD" access="false" id="AnalyzeJD">AnalyzeJD</button>
+</div>
+<div class="formbuilder-button form-group field-button-1696514564541">
+    <button type="button" class="btn-primary btn" name="button-1696514564542" value="ReplaceKeywords" access="false" id="replaceKeywordsButton">Replace Keywords</button>
+</div>
+<div class="formbuilder-button form-group field-button-1696514564541">
+    <button type="button" class="btn-primary btn" name="button-1696514564543" value="ExportPdf" access="false" id="exportPdf">Export Pdf</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Programming Language -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Programming Language</label>
+    <div class="checkbox-group" id="progLanguages_checkboxContainer">
+        <script>makeCheckBoxes(progLanguages, "progLanguages_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Frontend Stacks -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Frontend Stacks</label>
+    <div class="checkbox-group" id="frontEndStacks_checkboxContainer">
+        <script>makeCheckBoxes(frontEndStacks, "frontEndStacks_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Primary Backend Stacks -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Primary Backend Stacks</label>
+    <div class="checkbox-group" id="primaryBackEndStacks_checkboxContainer">
+        <script>makeCheckBoxes(primaryBackEndStacks, "primaryBackEndStacks_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Secondary Backend Stacks -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Secondary Backend Stacks</label>
+    <div class="checkbox-group" id="secondaryBackEndStacks_checkboxContainer">
+        <script>makeCheckBoxes(secondaryBackEndStacks, "secondaryBackEndStacks_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Style Framework -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Style Framework</label>
+    <div class="checkbox-group" id="styleFrameworks_checkboxContainer">
+        <script>makeCheckBoxes(styleFrameworks, "styleFrameworks_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- SQL Databases -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">SQL Databases</label>
+    <div class="checkbox-group" id="sqlDatabases_checkboxContainer">
+        <script>makeCheckBoxes(sqlDatabases, "sqlDatabases_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- NoSQL Databases -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">NoSQL Databases</label>
+    <div class="checkbox-group" id="noSQLDatabases_checkboxContainer">
+        <script>makeCheckBoxes(noSQLDatabases, "noSQLDatabases_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Planning Tools -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Planning Tools</label>
+    <div class="checkbox-group" id="planningTools_checkboxContainer">
+        <script>makeCheckBoxes(planningTools, "planningTools_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Development Tools -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Development Tools</label>
+    <div class="checkbox-group" id="developmentTools_checkboxContainer">
+        <script>makeCheckBoxes(developmentTools, "developmentTools_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Version Control Tools -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Version Control Tools</label>
+    <div class="checkbox-group" id="versionControl_checkboxContainer">
+        <script>makeCheckBoxes(versionControl, "versionControl_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Build Tools -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Build Tools</label>
+    <div class="checkbox-group" id="buildTools_checkboxContainer">
+        <script>makeCheckBoxes(buildTools, "buildTools_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Testing Tools -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Testing Tools</label>
+    <div class="checkbox-group" id="testingTools_checkboxContainer">
+        <script>makeCheckBoxes(testingTools, "testingTools_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Deployment Tools -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Testing Tools</label>
+    <div class="checkbox-group" id="deployementTools_checkboxContainer">
+        <script>makeCheckBoxes(deployementTools, "deployementTools_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Operations Tools -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Deployment Tools</label>
+    <div class="checkbox-group" id="operationsTools_checkboxContainer">
+        <script>makeCheckBoxes(operationsTools, "operationsTools_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Cloud Tools -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Operations Tools</label>
+    <div class="checkbox-group" id="cloudServices_checkboxContainer">
+        <script>makeCheckBoxes(cloudServices, "cloudServices_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- ML Skills -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">ML Skills</label>
+    <div class="checkbox-group" id="mlSkills_checkboxContainer">
+        <script>makeCheckBoxes(mlSkills, "mlSkills_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Data Skills -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Data Skills</label>
+    <div class="checkbox-group" id="dataSkills_checkboxContainer">
+        <script>makeCheckBoxes(dataSkills, "dataSkills_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- ML/Data Tools and Frameworks -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">ML/Data Tools and Frameworks</label>
+    <div class="checkbox-group" id="mlDataToolsFrameworks_checkboxContainer">
+        <script>makeCheckBoxes(mlDataToolsFrameworks, "mlDataToolsFrameworks_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- BigData -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Blockchain</label>
+    <div class="checkbox-group" id="bigDataSkills_checkboxContainer">
+        <script>makeCheckBoxes(bigDataSkills, "bigDataSkills_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Blockchain Skills -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">BigData Skills</label>
+    <div class="checkbox-group" id="blockChain_checkboxContainer">
+        <script>makeCheckBoxes(blockChain, "blockChain_checkboxContainer");</script>
+    </div>
+</div>-->
+<!-- Other Skills -->
+<!--<div class="formbuilder-checkbox-group form-group field-checkbox-group-1696514414261" id="checkboxGroup">
+    <label for="checkbox-group-1696514414261" class="formbuilder-checkbox-group-label">Other Skills</label>
+    <div class="checkbox-group" id="others_checkboxContainer">
+        <script>makeCheckBoxes(others, "others_checkboxContainer");</script>
+    </div>
+</div>-->

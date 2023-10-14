@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@types/office-js": "^1.0.350",
+    "eslint": "^8.51.0"
+  }
+}
