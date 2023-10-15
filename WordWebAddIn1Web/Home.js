@@ -21,7 +21,7 @@
             }
             document.getElementById("SegragateData").addEventListener("click", function () {
                 segregateData(document.getElementById("JDtextarea").value);
-            }); 
+            });
             // Add a click event handler for the highlight button.
 
             document.getElementById("AnalyzeJD").addEventListener("click", function () {
@@ -123,16 +123,16 @@
                 });
             });
 
-            Array.from(document.getElementsByClassName("exportPdf")).forEach(value => {
-                value.addEventListener("click", function () {
-                    //createDuplicateDoc();
-                });
-                
-            });
+            //Array.from(document.getElementsByClassName("exportPdf")).forEach(value => {
+            //    value.addEventListener("click", function () {
+            //        //createDuplicateDoc();
+            //    });
 
-            
+            //});
+
+
         });
-    }();
+    };
     function segregateData(data) {
         company = data.split("^")[0];
         jobTitle = data.split("^")[1];
@@ -274,7 +274,7 @@ let found_others = [];
 const others = ["Shopify", "Wordpress"];
 
 function makeCheckBoxes2(itemsList, containerId) {
-    
+
     var checkboxContainer = document.getElementById(containerId);
     itemsList.forEach(function (tech, index) {
         var checkbox = document.createElement("div");
@@ -350,14 +350,14 @@ function replaceTextWithRegex(replacementString, foundArray, modelArray) {
         // Queue a command to search the document body for the word "hello".
         var searchResults = body.search(replacementString, { matchCase: false, matchWholeWord: false });
         // Queue a command to load the results.
-        context.load(searchResults, "text");        
+        context.load(searchResults, "text");
         // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
-            
+
             // Loop through the results and highlight each one with yellow color.
-            for (var i = 0; i < searchResults.items.length; i++) {                
-                searchResults.items[i].clear();                
+            for (var i = 0; i < searchResults.items.length; i++) {
+                searchResults.items[i].clear();
                 searchResults.items[i].insertText(foundArray.length > 0 ? foundArray[Math.floor(Math.random() * foundArray.length)] : modelArray[Math.floor(Math.random() * foundArray.length)]);
             }
             // Synchronize again to apply the changes.
@@ -373,88 +373,4 @@ function replaceTextWithRegex(replacementString, foundArray, modelArray) {
     //    //}
     //});
 
-}
-
-function createDuplicateDoc() {
-    
-    Word.run(async (context) => {
-        const base64doc = await convertToBase64(); // gets the base64 encoded document
-
-        // Create a new document from the base64 encoded data
-        const newDoc = context.application.createDocument(base64doc);
-
-        // Load the body of the new document
-        const newDocBody = newDoc.body;
-        newDocBody.load("text");
-
-        // Synchronize changes
-        await context.sync();
-
-        // Insert the base64 encoded content into the new document's body
-        newDocBody.insertFileFromBase64(base64doc, Word.InsertLocation.end);
-        await context.sync();
-    });
-
-
-}
-// This function converts the current document to a base64-encoded .docx file
-async function convertToBase64() {
-    Word.run(async context => {
-
-        // Get the current document from the context
-        const doc = context.document;
-        document.getFileAsync("compressed", function (result) {
-            const file = result.value;
-            // Get the slice collection of the file
-            //const slices = file.getSlkiceCollection();
-            //const slices = Office.Slice.data;
-            // Load the slices
-            await context.sync();
-            // Initialize an empty array to store the slice data
-            let data = [];
-            // Loop through the slices
-            for (let i = 0; i < slices.items.length; i++) {
-                // Get the current slice
-                let slice = slices.items[i];
-                // Get the base64 string of the slice data
-                let base64 = slice.data;
-                // Push the base64 string to the data array
-                data.push(base64);
-            }
-            // Join the data array into a single base64 string
-            let base64doc = data.join("");
-            // Return the base64 string of the document
-            return base64doc;
-        });
-        // Get the file object of the document
-        
-    });
-    //Word.run(async context => {
-
-    //    // Get the current document from the context
-    //    const doc = context.document;
-    //    // Get the file object of the document
-    //    const file = doc.getFil();
-    //    // Get the slice collection of the file
-    //    //const slices = file.getSlkiceCollection();
-    //    const slices = Office.Slice.data;
-    //    // Load the slices
-    //    await context.sync();
-    //    // Initialize an empty array to store the slice data
-    //    let data = [];
-    //    // Loop through the slices
-    //    for (let i = 0; i < slices.items.length; i++) {
-    //        // Get the current slice
-    //        let slice = slices.items[i];
-    //        // Get the base64 string of the slice data
-    //        let base64 = slice.data;
-    //        // Push the base64 string to the data array
-    //        data.push(base64);
-    //    }
-    //    // Join the data array into a single base64 string
-    //    let base64doc = data.join("");
-    //    // Return the base64 string of the document
-    //    return base64doc;
-    //});
-    
 }
