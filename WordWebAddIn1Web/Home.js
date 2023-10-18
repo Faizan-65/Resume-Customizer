@@ -1,10 +1,8 @@
 ﻿
 (function () {
-    //"use strict";
+    "use strict";
 
     var messageBanner;
-
-    // The initialize function must be run each time a new page is loaded.
     Office.initialize = function (reason) {
         $(document).ready(function () {
             // Initialize the notification mechanism and hide it
@@ -19,13 +17,12 @@
                 $('#button-desc').text("Display the selected text");
                 return;
             }
-            document.getElementById("SegragateData").addEventListener("click", function () {
+            document.getElementById("JDtextarea").addEventListener("input", function () {
                 segregateData(document.getElementById("JDtextarea").value);
             });
-            // Add a click event handler for the highlight button.
+             //Add a click event handler for the highlight button.
 
             document.getElementById("AnalyzeJD").addEventListener("click", function () {
-                handle_stackAnalysis(progLanguages, found_ProgLanguages);
                 handle_stackAnalysis(frontEndStacks, found_FrontEndStacks);
                 handle_stackAnalysis(secondaryBackEndStacks, found_secondaryBackEndStacks);
                 handle_stackAnalysis(styleFrameworks, found_styleFrameworks);
@@ -49,66 +46,27 @@
 
             Array.from(document.getElementsByClassName("replaceKeywordsButton")).forEach(value => {
                 value.addEventListener("click", function () {
-                    replaceTextWithRegex(string_progLanguages, Array.from(document.getElementById("progLanguages_checkboxContainer").querySelectorAll("input[type=checkbox][name='progLanguages_checkboxContainer-checkbox-group[]']:checked"), e => e.value), progLanguages);
-
                     replaceTextWithRegex(string_frontEndStacks, Array.from(document.getElementById("frontEndStacks_checkboxContainer").querySelectorAll("input[type=checkbox][name='frontEndStacks_checkboxContainer-checkbox-group[]']:checked"), e => e.value), frontEndStacks);
-
                     replaceTextWithRegex(string_primaryBackEndStacks, Array.from(document.getElementById("primaryBackEndStacks_checkboxContainer").querySelectorAll("input[type=checkbox][name='primaryBackEndStacks_checkboxContainer-checkbox-group[]']:checked"), e => e.value), primaryBackEndStacks);
-
                     replaceTextWithRegex(string_secondaryBackEndStacks, Array.from(document.getElementById("secondaryBackEndStacks_checkboxContainer").querySelectorAll("input[type=checkbox][name='secondaryBackEndStacks_checkboxContainer-checkbox-group[]']:checked"), e => e.value), secondaryBackEndStacks);
-
                     replaceTextWithRegex(string_styleFrameworks, Array.from(document.getElementById("styleFrameworks_checkboxContainer").querySelectorAll("input[type=checkbox][name='styleFrameworks_checkboxContainer-checkbox-group[]']:checked"), e => e.value), styleFrameworks);
-
                     replaceTextWithRegex(string_sqlDatabases, Array.from(document.getElementById("sqlDatabases_checkboxContainer").querySelectorAll("input[type=checkbox][name='sqlDatabases_checkboxContainer-checkbox-group[]']:checked"), e => e.value), sqlDatabases);
-
                     replaceTextWithRegex(string_noSDatabases, Array.from(document.getElementById("noSDatabases_checkboxContainer").querySelectorAll("input[type=checkbox][name='noSDatabases_checkboxContainer-checkbox-group[]']:checked"), e => e.value), noSDatabases);
-
                     replaceTextWithRegex(string_planningTools, Array.from(document.getElementById("planningTools_checkboxContainer").querySelectorAll("input[type=checkbox][name='planningTools_checkboxContainer-checkbox-group[]']:checked"), e => e.value), planningTools);
-
                     replaceTextWithRegex(string_developmentTools, Array.from(document.getElementById("developmentTools_checkboxContainer").querySelectorAll("input[type=checkbox][name='developmentTools_checkboxContainer-checkbox-group[]']:checked"), e => e.value), developmentTools);
-
                     replaceTextWithRegex(string_versionControl, Array.from(document.getElementById("versionControl_checkboxContainer").querySelectorAll("input[type=checkbox][name='versionControl_checkboxContainer-checkbox-group[]']:checked"), e => e.value), versionControl);
-
                     replaceTextWithRegex(string_buildTools, Array.from(document.getElementById("buildTools_checkboxContainer").querySelectorAll("input[type=checkbox][name='buildTools_checkboxContainer-checkbox-group[]']:checked"), e => e.value), buildTools);
-
                     replaceTextWithRegex(string_testingTools, Array.from(document.getElementById("testingTools_checkboxContainer").querySelectorAll("input[type=checkbox][name='testingTools_checkboxContainer-checkbox-group[]']:checked"), e => e.value), testingTools);
-
                     replaceTextWithRegex(string_deployementTools, Array.from(document.getElementById("deployementTools_checkboxContainer").querySelectorAll("input[type=checkbox][name='deployementTools_checkboxContainer-checkbox-group[]']:checked"), e => e.value), deployementTools);
-
                     replaceTextWithRegex(string_operationsTools, Array.from(document.getElementById("operationsTools_checkboxContainer").querySelectorAll("input[type=checkbox][name='operationsTools_checkboxContainer-checkbox-group[]']:checked"), e => e.value), operationsTools);
-
                     replaceTextWithRegex(string_cloudServices, Array.from(document.getElementById("cloudServices_checkboxContainer").querySelectorAll("input[type=checkbox][name='cloudServices_checkboxContainer-checkbox-group[]']:checked"), e => e.value), cloudServices);
-
                     replaceTextWithRegex(string_mlSkills, Array.from(document.getElementById("mlSkills_checkboxContainer").querySelectorAll("input[type=checkbox][name='mlSkills_checkboxContainer-checkbox-group[]']:checked"), e => e.value), mlSkills);
-
                     replaceTextWithRegex(string_dataOnly, Array.from(document.getElementById("dataOnly_checkboxContainer").querySelectorAll("input[type=checkbox][name='dataOnly_checkboxContainer-checkbox-group[]']:checked"), e => e.value), dataOnly);
-
                     replaceTextWithRegex(string_mlDataToolsFrameworks, Array.from(document.getElementById("mlDataToolsFrameworks_checkboxContainer").querySelectorAll("input[type=checkbox][name='mlDataToolsFrameworks_checkboxContainer-checkbox-group[]']:checked"), e => e.value), mlDataToolsFrameworks);
-
                     replaceTextWithRegex(string_bigData, Array.from(document.getElementById("bigData_checkboxContainer").querySelectorAll("input[type=checkbox][name='bigData_checkboxContainer-checkbox-group[]']:checked"), e => e.value), bigData);
-
                     replaceTextWithRegex(string_blockChain, Array.from(document.getElementById("blockChain_checkboxContainer").querySelectorAll("input[type=checkbox][name='blockChain_checkboxContainer-checkbox-group[]']:checked"), e => e.value), blockChain);
-
                     replaceTextWithRegex(string_others, Array.from(document.getElementById("others_checkboxContainer").querySelectorAll("input[type=checkbox][name='others_checkboxContainer-checkbox-group[]']:checked"), e => e.value), others);
-
-                    //replaceTextWithRegex(string_secondaryBackEndStacks, found_secondaryBackEndStacks, secondaryBackEndStacks);
-                    //replaceTextWithRegex(string_styleFrameworks, found_styleFrameworks, styleFrameworks);
-                    //replaceTextWithRegex(string_sqlDatabases, found_sqlDatabases, sqlDatabases);
-                    //replaceTextWithRegex(string_noSDatabases, found_noSDatabases, noSDatabases);
-                    //replaceTextWithRegex(string_planningTools, found_planningTools, planningTools);
-                    //replaceTextWithRegex(string_developmentTools, found_developmentTools, developmentTools);
-                    //replaceTextWithRegex(string_versionControl, found_versionControl, versionControl);
-                    //replaceTextWithRegex(string_buildTools, found_buildTools, buildTools);
-                    //replaceTextWithRegex(string_testingTools, found_testingTools, testingTools);
-                    //replaceTextWithRegex(string_deployementTools, found_deployementTools, deployementTools);
-                    //replaceTextWithRegex(string_operationsTools, found_operationsTools, operationsTools);
-                    //replaceTextWithRegex(string_cloudServices, found_cloudServices, cloudServices);
-                    //replaceTextWithRegex(string_mlSkills, found_MLSkills, mlSkills);
-                    //replaceTextWithRegex(string_dataOnly, found_dataOnly, dataOnly);
-                    //replaceTextWithRegex(string_mlDataToolsFrameworks, found_mlDataToolsFrameworks, mlDataToolsFrameworks);
-                    //replaceTextWithRegex(string_bigData, found_bigData, bigData);
-                    //replaceTextWithRegex(string_blockChain, found_blockChain, blockChain);
-                    //replaceTextWithRegex(string_others, found_others, others);
+                    copy();
                 });
             });
 
@@ -123,12 +81,11 @@
                 });
             });
 
-            //Array.from(document.getElementsByClassName("exportPdf")).forEach(value => {
-            //    value.addEventListener("click", function () {
-            //        //createDuplicateDoc();
-            //    });
-
-            //});
+            Array.from(document.getElementsByClassName("copyName")).forEach(value => {
+                value.addEventListener("click", function () {
+                    copy();
+                });
+            });
 
 
         });
@@ -171,23 +128,22 @@ let jobDescription = '';
 const string_progLanguages = "progLanguages";
 //const regex_progLanguages = "/progLanguages/g";
 let found_ProgLanguages = [];
-const progLanguages = ["Ruby", "Node", "TypeScript", "JavaScript", "Python", "Solidity", "PHP"];
+const progLanguages = [, , , ];
 
 const string_frontEndStacks = "frontEndStacks";
 //const regex_frontEndStacks = "/frontEndStacks/g";
 let found_FrontEndStacks = [];
-const frontEndStacks = ["React", "ReactJS", "Vue", "VueJS", "Angular", "AngularJS"];
+const frontEndStacks = ["React", "Vue", "Angular", "Ember", "GraphQL", "Apollo", "Redux", "jQuery", "TypeScript", "JavaScript","HTML", "CSS"];
 
 const string_primaryBackEndStacks = "primaryBackEndStacks";
 //const regex_primaryBackEndStacks = "/primaryBackEndStacks/g";
 let found_primaryBackEndStacks = [];
-const primaryBackEndStacks = ["Primarily in Ruby on Rails", "Primarily in ExpressJS", "Primarily in Django", "Primarily in Flask", "Primarily in Laravel", "Primarily in MERN",
-    "Primarily in MEAN", "Primarily in NestJs", "Primarily in NodeJS"];
+const primaryBackEndStacks = ["Ruby on Rails", "Python", "Python Django", "Python Flask", "PHP", "Laravel", "NestJs", "NodeJS", "ExpressJS",];
 
 const string_secondaryBackEndStacks = "secondaryBackEndStacks";
 //const regex_secondaryBackEndStacks = "/secondaryBackEndStacks/g";
 let found_secondaryBackEndStacks = [];
-const secondaryBackEndStacks = ["Ruby/Rails", "ROR", "Ruby on Rails", "Express", "ExpressJS", "Django", "Flask", "Laravel", "MERN", "MEAN", "NestJs", "NodeJS"];
+const secondaryBackEndStacks = ["Rails", "Django", "Flask", "Laravel" ,"Node"];
 
 const string_styleFrameworks = "styleFrameworks";
 //const regex_styleFrameworks = "/styleFrameworks/g";
@@ -197,7 +153,7 @@ const styleFrameworks = ["Bootstrap", "Tailwind", "MaterialUI"];
 const string_sqlDatabases = "sqlDatabases";
 //const regex_sqlDatabases = "/sqlDatabases/g";
 let found_sqlDatabases = [];
-const sqlDatabases = ["SQLite", "Oracle", "Microsoft SQL Server", "MySQL", "PostgreSQL"];
+const sqlDatabases = ["SQLite", "Oracle", "Microsoft SQL Server", "MySQL", "Postgre"];
 
 const string_noSDatabases = "noSDatabases";
 //const regex_noSDatabases = "/noSDatabases/g";
@@ -266,25 +222,12 @@ const bigData = ["Hadoop", "Spark", "MapReduce", "Apache Airflow", "Apache Kafka
 const string_blockChain = "blockChain";
 //const regex_blockChain = "/blockChain/g";
 let found_blockChain = [];
-const blockChain = ["Smart Contracts", "DeFi", "Dapps", "Exchanges", "Token Development", "Security Audits", "NFT", "wallets", "Aggregators", "Signature verifications"];
+const blockChain = ["Solidity", "Smart Contracts", "DeFi", "Dapps", "Exchanges", "Token Development", "Security Audits", "NFT", "wallets", "Aggregators", "Signature verifications"];
 
 const string_others = "othestring";
 //const regex_others = "/othersReg/g";
 let found_others = [];
 const others = ["Shopify", "Wordpress"];
-
-function makeCheckBoxes2(itemsList, containerId) {
-
-    var checkboxContainer = document.getElementById(containerId);
-    itemsList.forEach(function (tech, index) {
-        var checkbox = document.createElement("div");
-        checkbox.className = "formbuilder-checkbox";
-        checkbox.innerHTML = `
-        <input name="checkbox-group-1696514414261[]" access="false" id="checkbox-group-${index}" value="${tech}" type="checkbox">
-        <label for="checkbox-group-${index}">${tech}</label>`;
-        checkboxContainer.appendChild(checkbox);
-    });
-}
 
 function makeCheckBoxes(itemsList, containerId, label) {
     var checkboxGroup = document.createElement("div");
@@ -321,8 +264,6 @@ function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 function handle_stackAnalysis(modelArray, foundArray) {
-    //const regexTerms = modelArray.map((term) => `\\b${escapeRegExp(term.trim())}\\b`).join("|");
-    //const regex = new RegExp(`(${regexTerms})`, "gi");
     const regexTerms = modelArray.map((term) => `\\b${escapeRegExp(term.trim())}\\b`).join("|");
     const regex = new RegExp(regexTerms, "gi"); // add the i flag here
     const matches = jobDescription.match(regex);
@@ -332,6 +273,9 @@ function handle_stackAnalysis(modelArray, foundArray) {
             foundArray.push(modelArray.find((element) => match.includes(element)));
 
         })
+    }
+    if (foundArray.length===0) {
+        foundArray.push(modelArray[Math.floor(Math.random() * modelArray.length)]);
     }
     checkCheckboxes(foundArray);
 }
@@ -358,7 +302,8 @@ function replaceTextWithRegex(replacementString, foundArray, modelArray) {
             // Loop through the results and highlight each one with yellow color.
             for (var i = 0; i < searchResults.items.length; i++) {
                 searchResults.items[i].clear();
-                searchResults.items[i].insertText(foundArray.length > 0 ? foundArray[Math.floor(Math.random() * foundArray.length)] : modelArray[Math.floor(Math.random() * foundArray.length)]);
+                searchResults.items[i].insertText(foundArray.length > 0 ? foundArray[Math.floor(Math.random() * foundArray.length)] : modelArray[Math.floor(Math.random() * modelArray.length)]);
+                searchResults.items[i].font.highlightColor = '#FFFF00';
             }
             // Synchronize again to apply the changes.
             return context.sync();
@@ -373,4 +318,14 @@ function replaceTextWithRegex(replacementString, foundArray, modelArray) {
     //    //}
     //});
 
+}
+function copy() {
+    let fileName = "Murtza_" + document.getElementById("company").value + "_" + document.getElementById("jobTitle").value;
+
+    let temp = document.createElement("textarea");
+    document.body.appendChild(temp);
+    temp.value = fileName;
+    temp.select();
+    navigator.clipboard.writeText(temp.value);
+    temp.remove();
 }
