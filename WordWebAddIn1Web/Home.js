@@ -138,7 +138,7 @@ const frontEndStacks = ["React", "Vue", "Angular", "Ember", "GraphQL", "Apollo",
 const string_primaryBackEndStacks = "primaryBackEndStacks";
 //const regex_primaryBackEndStacks = "/primaryBackEndStacks/g";
 let found_primaryBackEndStacks = [];
-const primaryBackEndStacks = ["Ruby on Rails", "Python", "Python Django", "Python Flask", "PHP", "Laravel", "NestJs", "NodeJS", "ExpressJS",];
+const primaryBackEndStacks = ["Ruby on Rails", "Python", "PHP", "Laravel", "NestJs", "NodeJS", "ExpressJS",];
 
 const string_secondaryBackEndStacks = "secondaryBackEndStacks";
 //const regex_secondaryBackEndStacks = "/secondaryBackEndStacks/g";
@@ -153,7 +153,7 @@ const styleFrameworks = ["Bootstrap", "Tailwind", "MaterialUI"];
 const string_sqlDatabases = "sqlDatabases";
 //const regex_sqlDatabases = "/sqlDatabases/g";
 let found_sqlDatabases = [];
-const sqlDatabases = ["SQLite", "Oracle", "Microsoft SQL Server", "MySQL", "Postgre"];
+const sqlDatabases = ["SQLite", "Oracle", "Microsoft SQL Server", "MySQL", "PostgreSQL"];
 
 const string_noSDatabases = "noSDatabases";
 //const regex_noSDatabases = "/noSDatabases/g";
@@ -269,10 +269,8 @@ function handle_stackAnalysis(modelArray, foundArray) {
     const matches = jobDescription.match(regex);
     if (matches) {
         matches.forEach((match) => {
-            //foundArray.push(match);
             foundArray.push(modelArray.find((element) => match.includes(element)));
-
-        })
+        });
     }
     if (foundArray.length===0) {
         foundArray.push(modelArray[Math.floor(Math.random() * modelArray.length)]);
@@ -281,6 +279,7 @@ function handle_stackAnalysis(modelArray, foundArray) {
 }
 function checkCheckboxes(foundArr) {
     foundArr.forEach(function (match) {
+        console.log(foundArr);
         var checkbox = document.querySelector(`[value="${match}"]`);
         if (checkbox) {
             checkbox.checked = true;
