@@ -3,6 +3,7 @@
     "use strict";
     //Test for fork Syncing
     var messageBanner;
+    
     Office.initialize = function (reason) {
         $(document).ready(function () {
             // Initialize the notification mechanism and hide it
