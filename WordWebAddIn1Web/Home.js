@@ -1,7 +1,7 @@
 ﻿
 (function () {
     "use strict";
-    //Test for fork Syncing
+    //Test for fork Syncing          
     var messageBanner;
     
     Office.initialize = function (reason) {
