@@ -2,7 +2,7 @@
 (function () {
     "use strict";
     //Test for fork Syncing
-    var messageBanner;
+    var messageBanner; 
     
     Office.initialize = function (reason) {
         $(document).ready(function () {
